@@ -334,3 +334,25 @@ footer { padding: 40px 0; display: flex; justify-content: space-between; color: 
   .reveal, .fade-in { opacity: 1; transform: none; }
   .split .w > span { transform: none; }
 }
+
+/* ==========================================================
+   Custom cursor (desktop with a mouse only)
+   ========================================================== */
+.cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; border-radius: 50%; opacity: 0; transition: opacity .3s; }
+.cursor-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; background: var(--violet); }
+.cursor-ring {
+  width: 40px; height: 40px; margin: -20px 0 0 -20px;
+  border: 1.5px solid rgba(91, 79, 255, .5);
+  display: grid; place-items: center;
+  font-size: 13px; font-weight: 500; color: #fff;
+  transition: opacity .3s, width .35s var(--ease), height .35s var(--ease), margin .35s var(--ease), background .35s, border-color .35s;
+}
+.cursor-ring span { opacity: 0; transition: opacity .2s; }
+body.has-cursor .cursor-dot, body.has-cursor .cursor-ring { opacity: 1; }
+body.has-cursor, body.has-cursor a, body.has-cursor button { cursor: none; }
+.cursor-ring.hover { width: 64px; height: 64px; margin: -32px 0 0 -32px; background: rgba(91, 79, 255, .12); border-color: transparent; }
+.cursor-ring.view { width: 88px; height: 88px; margin: -44px 0 0 -44px; background: var(--violet); border-color: transparent; }
+.cursor-ring.view span { opacity: 1; }
+.cursor-dot.hide { opacity: 0 !important; }
+.cursor-ring.down { width: 30px; height: 30px; margin: -15px 0 0 -15px; }
+@media (pointer: coarse), (prefers-reduced-motion: reduce) { .cursor-dot, .cursor-ring { display: none; } }

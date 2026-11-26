@@ -67,3 +67,40 @@ window.addEventListener("scroll", () => {
 
 // Footer year
 document.querySelectorAll(".year").forEach((el) => (el.textContent = new Date().getFullYear()));
+
+// Custom cursor: dot + trailing ring (desktop mouse only)
+if (window.matchMedia("(pointer: fine)").matches &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const dot = document.createElement("div");
+  const ring = document.createElement("div");
+  dot.className = "cursor-dot";
+  ring.className = "cursor-ring";
+  ring.innerHTML = "<span>View</span>";
+  document.body.append(dot, ring);
+
+  let mx = -100, my = -100, rx = -100, ry = -100;
+  window.addEventListener("mousemove", (e) => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.transform = `translate(${mx}px, ${my}px)`;
+    document.body.classList.add("has-cursor");
+  });
+  document.addEventListener("mouseleave", () => document.body.classList.remove("has-cursor"));
+  window.addEventListener("mousedown", () => ring.classList.add("down"));
+  window.addEventListener("mouseup", () => ring.classList.remove("down"));
+
+  (function follow() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.transform = `translate(${rx}px, ${ry}px)`;
+    requestAnimationFrame(follow);
+  })();
+
+  document.querySelectorAll(".card").forEach((el) => {
+    el.addEventListener("mouseenter", () => { ring.classList.add("view"); dot.classList.add("hide"); });
+    el.addEventListener("mouseleave", () => { ring.classList.remove("view"); dot.classList.remove("hide"); });
+  });
+  document.querySelectorAll("a:not(.card), button, .pills span, .service").forEach((el) => {
+    el.addEventListener("mouseenter", () => ring.classList.add("hover"));
+    el.addEventListener("mouseleave", () => ring.classList.remove("hover"));
+  });
+}
