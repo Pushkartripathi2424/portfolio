@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Capsule — Case Study · Pushkar Tripathi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glow"><span></span><span></span><span></span></div>
+
+  <nav class="nav">
+    <a href="index.html" class="logo">Pushkar<i>.</i></a>
+    <ul>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:Pushkar24m@gmail.com" class="btn">Let's talk</a>
+    <button class="menu-btn" aria-label="Open menu"><span></span><span></span></button>
+  </nav>
+
+  <main class="container">
+    <header class="cs-hero">
+      <a href="index.html#work" class="back fade-in">← All work</a>
+      <span class="label fade-in" style="display:block;animation-delay:.1s">Case study 02 · Lifestyle</span>
+      <h1 class="split">Time Capsule</h1>
+      <p class="lead fade-in" style="animation-delay:.6s"><em style="font-family:var(--serif)">Dear Future Me.</em> Write a letter, set a goal, seal it, and open it when the time is right.</p>
+      <div class="meta fade-in" style="animation-delay:.8s">
+        <div><small>Role</small>UX/UI Designer</div>
+        <div><small>Type</small>College project</div>
+        <div><small>Tools</small>Figma (variables, text styles)</div>
+        <div><small>Output</small>8–10 screens + prototype</div>
+      </div>
+    </header>
+
+    <div class="gallery capsule reveal">
+      <figure><img src="images/capsule-welcome.png" alt="Dear Future Me welcome screen"><figcaption>Welcome</figcaption></figure>
+      <figure><img src="images/capsule-unlock-date.png" alt="Pick unlock date screen"><figcaption>Pick unlock date</figcaption></figure>
+      <figure><img src="images/capsule-sealed.png" alt="Sealed long-term capsule screen"><figcaption>Sealed capsule</figcaption></figure>
+      <figure><img src="images/capsule-profile.png" alt="Profile screen"><figcaption>Profile</figcaption></figure>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>The problem</h2>
+      <div class="body">
+        <p>People set goals and save memories, but both get lost in notes apps and camera rolls. Nothing brings you back to them at the right moment, so small goals get forgotten and big ones lose their meaning.</p>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Process</h2>
+      <div class="body">
+        <ol>
+          <li><strong>Problem understanding and target users,</strong> mapped into a user flow before any screens.</li>
+          <li><strong>Two capsule types.</strong> Short-term for low-effort goals and tasks; long-term (6 months to 10 years) for high-effort goals and achievements. A "choose capsule type" step leads into goal-aware create screens.</li>
+          <li><strong>Simpler navigation:</strong> just Capsules, Create and Profile, with "add memories" folded into the write screen to remove a step.</li>
+          <li><strong>A visual rethink.</strong> I started with a dark "Midnight Keepsake" palette, then moved to a dreamy pastel one so the app feels hopeful and personal rather than heavy.</li>
+          <li><strong>State you can feel:</strong> sealed capsules show a lock orb and a countdown; opened ones turn warm and bright.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Key screens</h2>
+      <div class="body">
+        <p><strong style="color:var(--ink);font-weight:500">Pick unlock date</strong> uses a dial plus quick picks (6 months to 10 years) and shows the result in days, e.g. "730 days", so the wait feels real.</p>
+        <p><strong style="color:var(--ink);font-weight:500">Sealed capsule</strong> shows a glowing lock, a countdown and a gentle line of encouragement: "A big goal. Worth every day of the wait."</p>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Visual system</h2>
+      <div class="body">
+        <p>Playfair Display for headings and letters gives a handwritten, keepsake feel; a clean sans keeps buttons and labels easy to read. Built on an 8pt grid with 20px side margins.</p>
+        <div class="swatches">
+          <span><i style="background:#2B2A4C"></i>#2B2A4C</span>
+          <span><i style="background:#B9A7E8"></i>#B9A7E8</span>
+          <span><i style="background:#FFD3B6"></i>#FFD3B6</span>
+          <span><i style="background:#CDEBDD"></i>#CDEBDD</span>
+          <span><i style="background:#FBE3EC"></i>#FBE3EC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section reveal">
+      <h2>Result</h2>
+      <div class="body">
+        <div class="highlight"><p>A clickable prototype linking Welcome → Home → Create → Sealed → Opened, built with Figma variables and text styles.</p></div>
+        <p style="margin-top:20px">What I learned: changing the palette changed how the product felt more than any layout change did.</p>
+      </div>
+    </div>
+
+    <div class="next-cs">
+      <span class="label">Next project</span>
+      <a href="blushbell.html"><h3>BlushBell →</h3></a>
+    </div>
+
+    <footer>
+      <span>© <span class="year">2026</span> Pushkar Tripathi</span>
+      <a href="mailto:Pushkar24m@gmail.com">Pushkar24m@gmail.com</a>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
